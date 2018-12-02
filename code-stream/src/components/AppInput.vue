@@ -4,7 +4,6 @@
 <form
   align="left"
   id="app"
-  @submit="checkForm"
   action="localhost:8080"
   method="post"
   novalidate="true"
@@ -79,19 +78,7 @@ export default{
     },
     writingFile: function () {
       this.writeFile(this.updateText.text, this.updateText.filename)
-    },
-    checkForm: function (e) {
-      this.errors = []
-
-      if (!this.text) {
-        this.errors.push('Text required.')
-      }
-      if (!this.file_name) {
-        this.errors.push('File Name required.')
-      }
-      e.preventDefault()
     }
-
   }
 }
 </script>
